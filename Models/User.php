@@ -10,11 +10,14 @@ class User{
     private $id;
     private $username;
     private $password;
+    private $type;
 
-    public function __construct($username,$password){
+    public function __construct($username,$password,$type){
         $this->username=$username;
         $this->password=$password;
+        $this->type = $type;
     }
+
 
     /**
      * @return mixed
@@ -23,10 +26,15 @@ class User{
     {
         return $this->id;
     }
+    public function getType()
+    {
+        return $this->type;
+    }
+    public function setType($type)
+    {                        
+        $this->type = $type;  
+    }
 
-    /**
-     * @param mixed $id
-     */
     public function setId($id)
     {
         $this->id = $id;
@@ -63,4 +71,5 @@ class User{
     {
         $this->password = $password;
     }
+
 }
