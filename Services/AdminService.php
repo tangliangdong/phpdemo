@@ -33,14 +33,14 @@ function deleteUser($id){
 
 }
 
-function addUser($username,$pass){
+function addUser($user){
     global $pdo;
     $pdo->beginTransaction();
     try{
-        $password = md5($pass);
+        $password = md5($user->getPassword());
         $sql='insert into user(username,password,type) VALUES(?,?,?)';
         $stmt = $pdo->prepare($sql);
-        $stmt->bindValue(1, $username);
+        $stmt->bindValue(1, $user->getUsername());
         $stmt->bindValue(2, $password);
         $stmt->bindValue(3, 2);
         if($stmt->execute()>0){

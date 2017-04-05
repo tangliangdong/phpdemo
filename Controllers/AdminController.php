@@ -13,8 +13,9 @@ if (isset($_POST['type'])&&isset($_POST['id'])){
 }
 
 if (isset($_POST['type'])&&isset($_POST['username'])&&isset($_POST['password'])){
-//    $user = new User($_POST['username'],$_POST['password'],2);
-    addUser($_POST['username'],$_POST['password']);
+    $user = new User($_POST['username'],$_POST['password'],2);
+//    addUser($_POST['username'],$_POST['password']);
+    addUser($user);
 }
 
 if(isset($_GET['type'])&&$_GET['type']==='cancel'){
