@@ -15,7 +15,7 @@ class Post
     private $own_id;
 
     /**
-     * Post constructor.
+     * Post constructor
      * @param $board_id
      * @param $text
      * @param $author_id
